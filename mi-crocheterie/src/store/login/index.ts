@@ -1,16 +1,16 @@
 import { Module } from "vuex";
 import { IState } from "..";
-import state, { IProductsState } from "./state";
+import state, { ILoginState } from "./state";
 import getters from "./getters";
 import mutations from "./mutations";
-import actions from "./actions";
+/* import actions from "./actions"; */
 
-const productsModule: Module<IProductsState, IState> = {
+const loginModule: Module<ILoginState, IState> = {
     namespaced: true,
     state,
     getters,
     mutations,
-    actions
+    /* actions */
 }
 
-export default productsModule
+export default loginModule

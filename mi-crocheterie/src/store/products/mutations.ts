@@ -1,5 +1,5 @@
 import { MutationTree } from "vuex";
-import { IProductsState } from "./products/state";
+import { IProductsState } from "./state";
 import { Product } from "@/models/product";
 
 const mutations: MutationTree<IProductsState> = {

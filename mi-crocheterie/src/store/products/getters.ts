@@ -3,13 +3,13 @@ import { IState } from "..";
 import { IProductsState } from "./state";
 
 const getters: GetterTree<IProductsState, IState> = {
-  getUsers(state) {
+  getProducts(state) {
     return state.products;
   },
   getIsLoading(state) {
     return state.isLoading;
   },
-  getUser(state) {
+  getProduct(state) {
     return state.selectedProduct;
   },
 };

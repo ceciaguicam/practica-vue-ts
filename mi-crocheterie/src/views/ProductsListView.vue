@@ -5,13 +5,6 @@
   <div>
     <div v-if="isLoading">Cargando...</div>
     <div class="product-list" v-else>
-      <!-- <UserItem
-        v-for="product in products"
-        :key="product.id"
-        :user="product"
-        @addCart="addElementToCart"
-        @goDetail="goDetail"
-      /> -->
       <ProductCard v-for="product in products" :key="product.id" :product="product" />
     </div>
   </div>
@@ -29,9 +22,10 @@
       },
 
       setup() {
-      const {products, isLoading, fetchProducts} = useProducts()
+        const {products, isLoading, fetchProducts} = useProducts()
 
-      fetchProducts()
+        fetchProducts()
+
 
       return {products, isLoading}
     }
@@ -48,3 +42,12 @@
   gap: 1rem 1rem;
 }
 </style>
+
+
+  <!-- <UserItem
+        v-for="product in products"
+        :key="product.id"
+        :user="product"
+        @addCart="addElementToCart"
+        @goDetail="goDetail"
+      /> -->

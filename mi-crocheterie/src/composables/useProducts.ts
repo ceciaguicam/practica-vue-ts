@@ -10,9 +10,11 @@ const useProducts = () => {
         isLoading: computed(() => store.getters["products/getIsLoading"]),
 
         //Actions
-        fetchProducts: () => store.dispatch("products/fetchProducts")
+        fetchProducts: () => store.dispatch("products/fetchProducts") 
     }
-
 }
 
 export default useProducts
+
+
+

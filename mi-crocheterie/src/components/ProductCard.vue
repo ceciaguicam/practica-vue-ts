@@ -3,15 +3,9 @@
     <div class="product-img">
       <img :src="product.images[0]" :alt="product.title" />
     </div>
-    <div class="user-info">
-      <div class="user-name">{{ product.title }}</div>
+    <div class="product-info">
+      <div class="product-name">{{ product.title }}</div>
       <div class="buttons">
-        <!-- <button class="btn btn-sm btn-primary" @click="$emit('addCart', user)">
-          Al Carro
-        </button>
-        <button class="btn btn-sm btn-success" @click="$emit('goDetail', user)">
-          Detalle
-        </button> -->
         <button class="btn btn-sm btn-primary">
           Al Carro
         </button>
@@ -23,6 +17,7 @@
   </div>
 </template>
 
+
 <script lang="ts">
   import { Product } from "@/models/product";
   import { defineComponent, PropType } from "vue";
@@ -31,7 +26,7 @@
     props: {
       product: {
         type: Object as PropType<Product>,
-        //required: true,
+        required: true,
       },
     },
 
@@ -55,3 +50,13 @@
     height: auto;
   }
   </style>
+
+
+
+
+<!-- <button class="btn btn-sm btn-primary" @click="$emit('addCart', user)">
+          Al Carro
+        </button>
+        <button class="btn btn-sm btn-success" @click="$emit('goDetail', user)">
+          Detalle
+        </button> -->

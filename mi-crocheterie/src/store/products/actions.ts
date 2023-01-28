@@ -5,6 +5,7 @@ import { ActionTree } from "vuex";
 import { IState } from "..";
 import { IProductsState } from "./state";
 
+
 const actions: ActionTree<IProductsState, IState> = {
   async fetchProducts({ commit }) {
     
@@ -18,7 +19,15 @@ const actions: ActionTree<IProductsState, IState> = {
 
     commit("setProducts", data);
   },
-  /* async fetchUserById({ commit }, userId: number) {
+ 
+};
+
+export default actions;
+
+
+
+
+ /* async fetchUserById({ commit }, userId: number) {
     // usamos la mutación para poner isLoading = true
     commit("setIsLoading", true);
 
@@ -33,6 +42,3 @@ const actions: ActionTree<IProductsState, IState> = {
     // usamos la mutación para volcar los datos obtenidos en la variable del state users
     commit("setSelectedUser", data);
   }, */
-};
-
-export default actions;
