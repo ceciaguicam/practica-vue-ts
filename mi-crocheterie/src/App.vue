@@ -1,10 +1,34 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <div class="store-name"><p>Mi Tienda</p></div>
+    <div class="nav-links">
+      <router-link to="/">Productos</router-link> |
+      <router-link to="/user-profile">Perfil</router-link>
+    </div>
+    <div class="nav-button"><logout-button class="logout-button"></logout-button></div>
   </nav>
   <router-view/>
+
+
 </template>
+
+<script lang="ts">
+  import { defineComponent } from 'vue'
+  import LogoutButton from './components/LogoutButton.vue';
+
+  export default defineComponent({
+    name: "AppComponent",
+    components: {
+    LogoutButton
+},
+    setup() {
+      return{
+      
+      }
+    }
+  })
+
+</script>
 
 <style>
 #app {
@@ -17,6 +41,10 @@
 
 nav {
   padding: 30px;
+  background-color: rgb(81, 234, 139);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav a {
@@ -25,6 +53,8 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: rgb(26, 117, 61);
 }
+
+
 </style>
