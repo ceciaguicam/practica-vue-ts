@@ -7,13 +7,11 @@
     <div class="login-form">
       <form>
         <div>
-          <label for="email">E-mail:</label>
-          <input type="email" required>
+          <input type="email" placeholder="E-mail" v-model="email" required>
         </div>
         <br />
         <div>
-          <label for="password">Password:</label>
-          <input type="password" required>
+          <input type="password" placeholder="Password" v-model="password" required>
         </div> 
         <br />
         <div id="lower">
@@ -24,13 +22,25 @@
   </template>
   
 <script lang="ts">
-  import { defineComponent } from 'vue';
+  import { defineComponent, ref } from 'vue';
   
   export default defineComponent({
     name: 'loginView',
     components: {
     },
-  });
+  
+  setup() {
+    const email = ref<string>('')
+    const password = ref<string>('')
+
+    return {
+      email,
+      password
+    }       
+  }
+});
+
+  
   </script>
 
 <style scoped>

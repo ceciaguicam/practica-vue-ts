@@ -5,7 +5,7 @@
           <h1 class="product-name"> {{ product.title }}</h1>
           <div class="product-info">
             <img class="product-img" :src="product.images[0]" alt="" />
-            <p>{{product.description}}</p>
+            <p class="product-description">{{product.description}}</p>
           </div>
         </div>
       </div>
@@ -65,18 +65,16 @@
 .product-img {
   margin-right: 10px;
   margin-left: 10px;
+  width: 400px;
+  height: 400px;
 }
 
-/* .details {
-    min-height: 200px;
-    max-width: 50%;
-    border: 1px solid black;
-    border-radius: 1rem;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-} */
+.product-info {
+  display: flex;
+  direction: columns;
+  
+}
+
 
 .product-info {
     width: 100%;
@@ -84,6 +82,10 @@
     padding: 2px;
     text-align: end;
     border-radius: 1rem;
+}
+
+.product-description {
+  font-size: medium;
 }
 
 </style>
