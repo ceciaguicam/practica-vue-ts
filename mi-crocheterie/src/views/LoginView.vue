@@ -7,22 +7,24 @@
     <div class="login-form">
       <form>
         <div>
-          <input type="email" placeholder="E-mail" v-model="email" required>
+          <input type="email" placeholder="E-mail" v-model="credentials.email" required>
         </div>
         <br />
         <div>
-          <input type="password" placeholder="Password" v-model="password" required>
+          <input type="password" placeholder="Password" v-model="credentials.password" required>
         </div> 
         <br />
         <div id="lower">
-            <input type="submit" value="Login">
+            <input type="submit" value="Login" @click="login(credentials)">  
         </div>
       </form>
     </div>
-  </template>
+ </template>
   
 <script lang="ts">
+  import useLogin from '@/composables/useLogin';
   import { defineComponent, ref } from 'vue';
+  import { Credentials } from "@/models/credentials";
   
   export default defineComponent({
     name: 'loginView',
@@ -30,18 +32,23 @@
     },
   
   setup() {
-    const email = ref<string>('')
-    const password = ref<string>('')
+    
+    const credentials = ref<Credentials>({
+      email: null,
+      password: null
+    })
+
+    const { login } = useLogin()
 
     return {
-      email,
-      password
+      credentials, 
+      login
     }       
   }
 });
 
   
-  </script>
+</script>
 
 <style scoped>
 

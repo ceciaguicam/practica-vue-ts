@@ -4,7 +4,11 @@
       <div class="product-details">
           <h1 class="product-name"> {{ product.title }}</h1>
           <div class="product-info">
-            <img class="product-img" :src="product.images[0]" alt="" />
+            <div class="slider-container">  
+              <img class="product-img" :src="product.images[0]" />
+              <img class="product-img" :src="product.images[1]"/>
+              <img class="product-img" :src="product.images[2]"/>
+            </div> 
             <p class="product-description">{{product.description}}</p>
           </div>
         </div>
@@ -63,10 +67,10 @@
 }
 
 .product-img {
-  margin-right: 10px;
-  margin-left: 10px;
-  width: 400px;
-  height: 400px;
+  flex: 0 0 100%;
+  width: 100%;
+  object-fit: cover;
+  scroll-snap-align: center;
 }
 
 .product-info {
@@ -87,5 +91,14 @@
 .product-description {
   font-size: medium;
 }
+
+.slider-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
 
 </style>

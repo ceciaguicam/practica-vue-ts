@@ -3,17 +3,23 @@ import { ActionTree } from "vuex";
 import { IState } from "..";
 import { ILoginState } from "./state";
 import { AxiosResponse } from "axios";
-import { User } from "@/models/user";
+import { Credentials } from "@/models/credentials";
+import { TokenResponse } from "@/models/tokenResponse";
 
 const actions: ActionTree<ILoginState, IState> = {
-  async askForAToken(context) {
+  async login({commit}, credentials: Credentials) {
 
-    const data  = await fakeShopApi.post<unknown, AxiosResponse>("/login", context.getEmail(), context.getPassword());
+    console.log(credentials)
 
-    context.commit("setToken", data);
+    const {data, status}  = await fakeShopApi.post<TokenResponse>("/auth/login", credentials);
+
+    commit("setToken", data.access_token);
+    
+    localStorage.setItem("token", JSON.stringify(data))
+
+    console.log("Ha hecho la petición")
 
   }, 
-  
 };
 
 export default actions;

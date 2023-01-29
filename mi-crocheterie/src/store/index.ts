@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 import { User } from '@/models/user';
 import productsModule from './products';
+import loginModule from './login';
 
 export interface IState {
   authUser: User | null; 
@@ -17,6 +18,7 @@ export default createStore <IState>({
   actions: {
   },
   modules: {
-    products: productsModule
+    products: productsModule,
+    login: loginModule
   }
 })
