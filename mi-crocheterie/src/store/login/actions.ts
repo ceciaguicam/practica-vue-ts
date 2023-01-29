@@ -5,11 +5,11 @@ import { ILoginState } from "./state";
 import { AxiosResponse } from "axios";
 import { Credentials } from "@/models/credentials";
 import { TokenResponse } from "@/models/tokenResponse";
+import router from "@/router";
 
 const actions: ActionTree<ILoginState, IState> = {
   async login({commit}, credentials: Credentials) {
 
-    console.log(credentials)
 
     const {data, status}  = await fakeShopApi.post<TokenResponse>("/auth/login", credentials);
 
@@ -17,7 +17,8 @@ const actions: ActionTree<ILoginState, IState> = {
     
     localStorage.setItem("token", JSON.stringify(data))
 
-    console.log("Ha hecho la petición")
+    router.push({name: "productsListView"})
+
 
   }, 
 };
