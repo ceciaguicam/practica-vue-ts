@@ -15,12 +15,11 @@ const actions: ActionTree<ILoginState, IState> = {
 
     commit("setToken", data.access_token);
     
-    localStorage.setItem("token", JSON.stringify(data))
+    localStorage.setItem("token", data.access_token)
 
     router.push({name: "productsListView"})
-
-
-  }, 
+  },
+  
 };
 
 export default actions;

@@ -1,4 +1,9 @@
 <template>
+  <NavBar>
+    <div class="nav-button">
+      <logout-button class="logout-button"></logout-button>
+    </div>
+  </NavBar>
   <div class="details">
     <div v-if="!isLoading">
       <div class="product-details">
@@ -20,12 +25,14 @@
   <script lang="ts">
   import { defineComponent } from 'vue';
   import useProducts from '@/composables/useProducts';
+  import NavBar from '@/components/NavBar.vue';
 
   
   
   export default defineComponent({
     name: 'productDetailsView',
     components: {
+      NavBar
 
     },
     props: {

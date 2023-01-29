@@ -9,6 +9,7 @@ const mutations: MutationTree<ILoginState> = {
 
   deleteToken(state: ILoginState) {
     state.token = null
+    console.log('Se ha borrado el token')
   }
 };
 

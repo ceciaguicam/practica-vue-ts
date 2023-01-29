@@ -1,4 +1,9 @@
 <template>
+  <NavBar>
+    <div class="nav-button">
+      <logout-button class="logout-button"></logout-button>
+    </div>
+  </NavBar>
   <div>
     <h1>Lista de productos</h1>
   </div>
@@ -22,11 +27,13 @@
     import useProducts from '@/composables/useProducts';
     import router from '@/router';
     import { Product } from '@/models/product';
+    import NavBar from '@/components/NavBar.vue';
     
     export default defineComponent({
       name: 'productsListView',
       components: {
-          ProductCard
+          ProductCard,
+          NavBar
       },
 
       setup() {
