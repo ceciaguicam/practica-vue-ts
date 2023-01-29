@@ -17,6 +17,6 @@ export default createStore <IState>({
   actions: {
   },
   modules: {
-    productsModule
+    products: productsModule
   }
 })

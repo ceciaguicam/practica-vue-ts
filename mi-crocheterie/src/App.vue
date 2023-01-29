@@ -2,7 +2,7 @@
   <nav>
     <div class="store-name"><p>Mi Tienda</p></div>
     <div class="nav-links">
-      <router-link to="/products-list">Productos</router-link> |
+      <router-link to="/">Productos</router-link> |
       <router-link to="/user-profile">Perfil</router-link>
     </div>
     <div class="nav-button"><logout-button class="logout-button"></logout-button></div>

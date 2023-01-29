@@ -19,6 +19,18 @@ const actions: ActionTree<IProductsState, IState> = {
 
     commit("setProducts", data);
   },
+   async fetchProductById({ commit }, productId: number) {
+    
+    commit("setIsLoading", true);
+
+    const { data } = await fakeShopApi.get<unknown, AxiosResponse<Product>>(
+      `/products/${productId}`
+    );
+
+    commit("setIsLoading", false);
+
+    commit("setSelectedProduct", data);
+  },
  
 };
 
@@ -27,18 +39,3 @@ export default actions;
 
 
 
- /* async fetchUserById({ commit }, userId: number) {
-    // usamos la mutación para poner isLoading = true
-    commit("setIsLoading", true);
-
-    // obtenemos los datos de manera asíncrona
-    const { data } = await fakeShopApi.get<unknown, AxiosResponse<User>>(
-      `/users/${userId}`
-    );
-
-    // usamos la mutación para poner isLoading = false
-    commit("setIsLoading", false);
-
-    // usamos la mutación para volcar los datos obtenidos en la variable del state users
-    commit("setSelectedUser", data);
-  }, */
