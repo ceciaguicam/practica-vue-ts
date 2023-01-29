@@ -15,11 +15,6 @@
   </div>
 </template>
 
-  <!-- <UserItem
-        
-        @addCart="addElementToCart"
-        
-      /> -->
   
   <script lang="ts">
     import { defineComponent } from 'vue';
@@ -28,12 +23,14 @@
     import router from '@/router';
     import { Product } from '@/models/product';
     import NavBar from '@/components/NavBar.vue';
+    import LogoutButton from '@/components/LogoutButton.vue';
     
     export default defineComponent({
       name: 'productsListView',
       components: {
           ProductCard,
-          NavBar
+          NavBar,
+          LogoutButton
       },
 
       setup() {

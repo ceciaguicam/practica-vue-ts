@@ -6,9 +6,6 @@
     <div class="product-info">
       <div class="product-name">{{ product.title }}</div>
       <div class="buttons">
-        <!-- <button class="btn btn-sm btn-primary">
-          Al Carro
-        </button> -->
         <button class="btn btn-sm btn-success" @click="$emit('goDetail', product)">
           +info
         </button>
@@ -17,9 +14,6 @@
   </div>
 </template>
 
-<!-- <button class="btn btn-sm btn-primary" @click="$emit('addCart', user)">
-          Al Carro
-        </button> -->
 
 
 <script lang="ts">

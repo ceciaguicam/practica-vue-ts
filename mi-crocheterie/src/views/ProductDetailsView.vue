@@ -26,13 +26,15 @@
   import { defineComponent } from 'vue';
   import useProducts from '@/composables/useProducts';
   import NavBar from '@/components/NavBar.vue';
+  import LogoutButton from '@/components/LogoutButton.vue';
 
   
   
   export default defineComponent({
     name: 'productDetailsView',
     components: {
-      NavBar
+      NavBar,
+      LogoutButton
 
     },
     props: {
