@@ -1,15 +1,18 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
+import haveRoleGuard from './role-guards';
 
-/* webpackChunkName: "productsListView" */
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'productsListView',
-    component: () => import('../views/ProductsListView.vue')
+    beforeEnter: [haveRoleGuard],
+    component: () => import(/* webpackChunkName: "productsListView" */ '../views/ProductsListView.vue')
   },
   {
     path: "/product-details/:id",
     name: "productDetailsView",
+    beforeEnter: [haveRoleGuard],
     component: () =>
       import(/*webpackChunkName: productDetailsView*/ "../views/ProductDetailsView.vue"),
     props: (route) => {
@@ -22,6 +25,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/user-profile',
     /* path: '/user-profile/:id', */
     name: 'userProfileView',
+    beforeEnter: [haveRoleGuard],
     component: () => import(/* webpackChunkName: "userProfileView" */ '../views/UserProfileView.vue')
   }
   ,
